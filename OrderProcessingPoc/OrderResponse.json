@@ -1,0 +1,232 @@
+[
+    {
+        "orderId": {
+            "orderId": "O001"
+        },
+        "orderVersion": 1,
+        "createdDateTime": {
+            "hour": 20,
+            "minute": 11,
+            "nano": 337000000,
+            "second": 20,
+            "dayOfMonth": 29,
+            "dayOfWeek": "MONDAY",
+            "dayOfYear": 88,
+            "month": "MARCH",
+            "monthValue": 3,
+            "year": 2021,
+            "chronology": {
+                "id": "ISO",
+                "calendarType": "iso8601"
+            }
+        },
+        "orderAmount": 82200.0,
+        "orderStatus": "CONFIRMED",
+        "items": [
+            {
+                "orderId": "O001",
+                "itemId": "I1",
+                "itemName": "TV",
+                "grossAmount": 10000.0,
+                "taxAmount": 2800.0,
+                "discountAmount": 500.0,
+                "manufactureDate": {
+                    "year": 2021,
+                    "month": "MARCH",
+                    "chronology": {
+                        "id": "ISO",
+                        "calendarType": "iso8601"
+                    },
+                    "era": "CE",
+                    "dayOfMonth": 29,
+                    "dayOfWeek": "MONDAY",
+                    "dayOfYear": 88,
+                    "leapYear": false,
+                    "monthValue": 3
+                },
+                "expireDate": {
+                    "year": 2022,
+                    "month": "DECEMBER",
+                    "chronology": {
+                        "id": "ISO",
+                        "calendarType": "iso8601"
+                    },
+                    "era": "CE",
+                    "dayOfMonth": 31,
+                    "dayOfWeek": "SATURDAY",
+                    "dayOfYear": 365,
+                    "leapYear": false,
+                    "monthValue": 12
+                },
+                "quantity": 2,
+                "totalAmount": 24600.0
+            },
+            {
+                "orderId": "O001",
+                "itemId": "I2",
+                "itemName": "TV Cover",
+                "grossAmount": 1000.0,
+                "taxAmount": 100.0,
+                "discountAmount": 100.0,
+                "manufactureDate": {
+                    "year": 2021,
+                    "month": "MARCH",
+                    "chronology": {
+                        "id": "ISO",
+                        "calendarType": "iso8601"
+                    },
+                    "era": "CE",
+                    "dayOfMonth": 29,
+                    "dayOfWeek": "MONDAY",
+                    "dayOfYear": 88,
+                    "leapYear": false,
+                    "monthValue": 3
+                },
+                "expireDate": {
+                    "year": 2022,
+                    "month": "DECEMBER",
+                    "chronology": {
+                        "id": "ISO",
+                        "calendarType": "iso8601"
+                    },
+                    "era": "CE",
+                    "dayOfMonth": 31,
+                    "dayOfWeek": "SATURDAY",
+                    "dayOfYear": 365,
+                    "leapYear": false,
+                    "monthValue": 12
+                },
+                "quantity": 2,
+                "totalAmount": 2000.0
+            }
+        ]
+    },
+    {
+        "orderId": {
+            "orderId": "O002"
+        },
+        "orderVersion": 1,
+        "createdDateTime": {
+            "hour": 20,
+            "minute": 11,
+            "nano": 339000000,
+            "second": 20,
+            "dayOfMonth": 29,
+            "dayOfWeek": "MONDAY",
+            "dayOfYear": 88,
+            "month": "MARCH",
+            "monthValue": 3,
+            "year": 2021,
+            "chronology": {
+                "id": "ISO",
+                "calendarType": "iso8601"
+            }
+        },
+        "orderAmount": 55800.0,
+        "orderStatus": "CANCELLED",
+        "items": [
+            {
+                "orderId": "O002",
+                "itemId": "I1",
+                "itemName": "Mobile",
+                "grossAmount": 5000.0,
+                "taxAmount": 580.0,
+                "discountAmount": -0.0,
+                "manufactureDate": {
+                    "year": 2021,
+                    "month": "MARCH",
+                    "chronology": {
+                        "id": "ISO",
+                        "calendarType": "iso8601"
+                    },
+                    "era": "CE",
+                    "dayOfMonth": 29,
+                    "dayOfWeek": "MONDAY",
+                    "dayOfYear": 88,
+                    "leapYear": false,
+                    "monthValue": 3
+                },
+                "expireDate": {
+                    "year": 2022,
+                    "month": "DECEMBER",
+                    "chronology": {
+                        "id": "ISO",
+                        "calendarType": "iso8601"
+                    },
+                    "era": "CE",
+                    "dayOfMonth": 31,
+                    "dayOfWeek": "SATURDAY",
+                    "dayOfYear": 365,
+                    "leapYear": false,
+                    "monthValue": 12
+                },
+                "quantity": 5,
+                "totalAmount": 27900.0
+            }
+        ]
+    },
+    {
+        "orderId": {
+            "orderId": "O003"
+        },
+        "orderVersion": 1,
+        "createdDateTime": {
+            "hour": 20,
+            "minute": 11,
+            "nano": 339000000,
+            "second": 20,
+            "dayOfMonth": 29,
+            "dayOfWeek": "MONDAY",
+            "dayOfYear": 88,
+            "month": "MARCH",
+            "monthValue": 3,
+            "year": 2021,
+            "chronology": {
+                "id": "ISO",
+                "calendarType": "iso8601"
+            }
+        },
+        "orderAmount": 102000.0,
+        "orderStatus": "BOOKED",
+        "items": [
+            {
+                "orderId": "O003",
+                "itemId": "I1",
+                "itemName": "Laptop",
+                "grossAmount": 50000.0,
+                "taxAmount": 1000.0,
+                "discountAmount": 0.0,
+                "manufactureDate": {
+                    "year": 2021,
+                    "month": "MARCH",
+                    "chronology": {
+                        "id": "ISO",
+                        "calendarType": "iso8601"
+                    },
+                    "era": "CE",
+                    "dayOfMonth": 29,
+                    "dayOfWeek": "MONDAY",
+                    "dayOfYear": 88,
+                    "leapYear": false,
+                    "monthValue": 3
+                },
+                "expireDate": {
+                    "year": 2022,
+                    "month": "DECEMBER",
+                    "chronology": {
+                        "id": "ISO",
+                        "calendarType": "iso8601"
+                    },
+                    "era": "CE",
+                    "dayOfMonth": 31,
+                    "dayOfWeek": "SATURDAY",
+                    "dayOfYear": 365,
+                    "leapYear": false,
+                    "monthValue": 12
+                },
+                "quantity": 1,
+                "totalAmount": 51000.0
+            }
+        ]
+    }
+]
