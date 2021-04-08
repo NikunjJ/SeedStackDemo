@@ -1,14 +1,14 @@
 package com.order.interfaces.rest.order;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import org.seedstack.business.assembler.AggregateId;
 import org.seedstack.business.assembler.DtoOf;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.order.domain.model.order.Order;
 import com.order.domain.model.order.OrderId;
-import com.order.domain.model.order.OrderItems;
 import com.order.domain.model.order.OrderStatus;
 
 @DtoOf(Order.class)
@@ -17,8 +17,11 @@ public class OrderDto {
 	private OrderId orderId;
 
 	private int orderVersion;
-	
-	private LocalDateTime createdDateTime;
+
+//	@JsonDeserialize(using = LocalDateDeserializer.class)
+//	@JsonSerialize(using = LocalDateSerializer.class)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MMM-yyyy")
+	private Date createdDateTime;
 
 	private double orderAmount;
 
@@ -37,7 +40,7 @@ public class OrderDto {
 		this.items = items;
 	}
 
-	public LocalDateTime getCreatedDateTime() {
+	public Date getCreatedDateTime() {
 		return createdDateTime;
 	}
 
@@ -66,7 +69,7 @@ public class OrderDto {
 		this.orderVersion = orderVersion;
 	}
 
-	public void setCreatedDateTime(LocalDateTime createdDateTime) {
+	public void setCreatedDateTime(Date createdDateTime) {
 		this.createdDateTime = createdDateTime;
 	}
 

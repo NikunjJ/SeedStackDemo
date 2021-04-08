@@ -37,3 +37,9 @@ jpa:
         hibernate.dialect: org.hibernate.dialect.HSQLDialect
         hibernate.hbm2ddl.auto: update
         hibernate.show_sql: true 
+
+#Disable default DateTime serialization        
+spring:
+    jackson:
+        serialization.write_dates_as_timestamps: false
+        

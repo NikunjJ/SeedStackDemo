@@ -21,3 +21,28 @@ domain.policy : DiscountPolicy rules applied based on Item Amount
 domain.service.order > OrderServiceImpl (logic impl)
 
 3. Refer OrderResponse.json for output of Get all orders url.
+
+4. Order Create URL and Json
+
+127.0.0.1:8080/order/create
+
+{
+    "orderId": {
+        "orderId": "O100"
+    },
+    "orderVersion": 1,
+    "createdDateTime": "08-Apr-2021",
+    "orderStatus": "CONFIRMED",
+    "items": [
+        {
+            "orderId": "O100",
+            "itemId": "I1",
+            "itemName": "TV",
+            "grossAmount": 10000.0,
+            "taxAmount": 2800.0,
+            "manufactureDate": "08-Apr-2021",
+            "expireDate": "08-Apr-2021",
+            "quantity": 2
+        }
+    ]
+}

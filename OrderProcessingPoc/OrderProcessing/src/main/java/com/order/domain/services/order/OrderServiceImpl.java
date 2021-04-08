@@ -37,13 +37,13 @@ public class OrderServiceImpl implements OrderService {
 
 		List<Order> orders = orderRepository.getAllOrders().collect(Collectors.toList());
 		
-		orders.stream().forEach(order -> {
+		/*orders.stream().forEach(order -> {
 		
 			//apply policy
 			DiscountPolicy policy = domainRegistory.getPolicy(DiscountPolicy.class, order.getOrderStatus().name());
 			policy.discountAmountPolicy(order);
 				
-		});
+		});*/
 		
 		
 		return orders;
@@ -65,8 +65,8 @@ public class OrderServiceImpl implements OrderService {
 		Order order = stream.findFirst().get();
 		
 		//apply policy
-		DiscountPolicy policy = domainRegistory.getPolicy(DiscountPolicy.class,order.getOrderStatus().name());
-		policy.discountAmountPolicy(order);
+		//DiscountPolicy policy = domainRegistory.getPolicy(DiscountPolicy.class,order.getOrderStatus().name());
+		//policy.discountAmountPolicy(order);
 		
 		return order;
 	}
@@ -77,5 +77,17 @@ public class OrderServiceImpl implements OrderService {
 	public void deleteOrder(String orderId) {
 
 		this.orderRepository.remove(new OrderId(orderId));
+	}
+	
+	@Override
+	@JpaUnit("myUnit")
+	@Transactional
+	public void createOrder(Order order)
+	{
+		//apply policy
+		DiscountPolicy policy = domainRegistory.getPolicy(DiscountPolicy.class,order.getOrderStatus().name());
+		policy.discountAmountPolicy(order);
+		
+		this.orderRepository.add(order);
 	}
 }

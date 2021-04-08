@@ -1,6 +1,8 @@
 package com.order.interfaces.rest.order;
 
-import java.time.LocalDate;
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class OrderItemsDto {
 
@@ -16,9 +18,13 @@ public class OrderItemsDto {
 
 	private double discountAmount;
 
-	private LocalDate manufactureDate;
+//	@JsonDeserialize(using = LocalDateDeserializer.class)
+//	@JsonSerialize(using = LocalDateSerializer.class)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MMM-yyyy")
+	private Date manufactureDate;
 
-	private LocalDate expireDate;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MMM-yyyy")
+	private Date expireDate;
 
 	private int quantity;
 	
@@ -92,19 +98,19 @@ public class OrderItemsDto {
 		this.discountAmount = discountAmount;
 	}
 
-	public LocalDate getManufactureDate() {
+	public Date getManufactureDate() {
 		return manufactureDate;
 	}
 
-	public void setManufactureDate(LocalDate manufactureDate) {
+	public void setManufactureDate(Date manufactureDate) {
 		this.manufactureDate = manufactureDate;
 	}
 
-	public LocalDate getExpireDate() {
+	public Date getExpireDate() {
 		return expireDate;
 	}
 
-	public void setExpireDate(LocalDate expireDate) {
+	public void setExpireDate(Date expireDate) {
 		this.expireDate = expireDate;
 	}
 

@@ -1,6 +1,6 @@
 package com.order.domain.model.order;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -30,11 +30,11 @@ public class OrderItems extends BaseValueObject{
 	
 	private double totalAmount;// (Gross + Tax - Discount) * quantity
 	
-	private LocalDate manufactureDate;
+	private Date manufactureDate;
 	
-	private LocalDate  expireDate;
+	private Date  expireDate;
 
-	public OrderItems(String orderId, String itemId, String itemName, double grossAmount, double taxAmount, LocalDate manufactureDate, LocalDate expireDate, int quantity) {
+	public OrderItems(String orderId, String itemId, String itemName, double grossAmount, double taxAmount, Date manufactureDate, Date expireDate, int quantity) {
 		super();
 		this.orderId = orderId;
 		this.itemId = itemId;
@@ -99,19 +99,19 @@ public class OrderItems extends BaseValueObject{
 		this.discountAmount = discountAmount;
 	}
 
-	public LocalDate getManufactureDate() {
+	public Date getManufactureDate() {
 		return manufactureDate;
 	}
 
-	public void setManufactureDate(LocalDate manufactureDate) {
+	public void setManufactureDate(Date manufactureDate) {
 		this.manufactureDate = manufactureDate;
 	}
 
-	public LocalDate getExpireDate() {
+	public Date getExpireDate() {
 		return expireDate;
 	}
 
-	public void setExpireDate(LocalDate expireDate) {
+	public void setExpireDate(Date expireDate) {
 		this.expireDate = expireDate;
 	}
 

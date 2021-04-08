@@ -1,6 +1,6 @@
 package com.order.domain.model.order;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -21,7 +21,7 @@ public class Order extends BaseAggregateRoot<OrderId> {
 
 	private int orderVersion;
 	
-	private LocalDateTime createdDateTime;
+	private Date createdDateTime;
 
 	private double orderAmount;
 
@@ -34,7 +34,7 @@ public class Order extends BaseAggregateRoot<OrderId> {
 	public Order() {
 	}
 
-	public Order(OrderId id, int orderVersion, LocalDateTime createdDateTime, OrderStatus orderStatus) {
+	public Order(OrderId id, int orderVersion, Date createdDateTime, OrderStatus orderStatus) {
 		super();
 		this.orderId = id;
 		this.orderVersion = orderVersion;
@@ -51,7 +51,7 @@ public class Order extends BaseAggregateRoot<OrderId> {
 		deriveAmount();
 	}
 
-	public LocalDateTime getCreatedDateTime() {
+	public Date getCreatedDateTime() {
 		return createdDateTime;
 	}
 
@@ -86,7 +86,7 @@ public class Order extends BaseAggregateRoot<OrderId> {
 		this.orderId = orderId;
 	}
 
-	public void setCreatedDateTime(LocalDateTime createdDateTime) {
+	public void setCreatedDateTime(Date createdDateTime) {
 		this.createdDateTime = createdDateTime;
 	}
 
