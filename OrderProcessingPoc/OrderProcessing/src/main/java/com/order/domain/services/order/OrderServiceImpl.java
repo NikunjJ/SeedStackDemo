@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.seedstack.business.domain.DomainEventPublisher;
 import org.seedstack.business.domain.DomainRegistry;
 import org.seedstack.business.specification.dsl.SpecificationBuilder;
 import org.seedstack.jpa.JpaUnit;
@@ -11,6 +12,7 @@ import org.seedstack.seed.Bind;
 import org.seedstack.seed.transaction.Transactional;
 
 import com.google.inject.Inject;
+import com.order.domain.events.MessagePublishedEvent;
 import com.order.domain.model.order.Order;
 import com.order.domain.model.order.OrderId;
 import com.order.domain.policy.DiscountPolicy;
@@ -23,11 +25,14 @@ public class OrderServiceImpl implements OrderService {
 	private IOrderRepository orderRepository;
 	
 	private DomainRegistry domainRegistory;
+
+    private DomainEventPublisher domainEventPublisher;
 	
 	@Inject
-	public OrderServiceImpl(DomainRegistry domainRegistory)
+	public OrderServiceImpl(DomainRegistry domainRegistory, DomainEventPublisher domainEventPublisher)
 	{
 		this.domainRegistory = domainRegistory;
+		this.domainEventPublisher = domainEventPublisher;
 	}
 	
 	@Override
@@ -87,7 +92,11 @@ public class OrderServiceImpl implements OrderService {
 		//apply policy
 		DiscountPolicy policy = domainRegistory.getPolicy(DiscountPolicy.class,order.getOrderStatus().name());
 		policy.discountAmountPolicy(order);
-		
+	
+		//Save order
 		this.orderRepository.add(order);
+		
+		//Publish order to Kafka using DomainEvent
+		domainEventPublisher.publish(new MessagePublishedEvent(order));
 	}
 }
